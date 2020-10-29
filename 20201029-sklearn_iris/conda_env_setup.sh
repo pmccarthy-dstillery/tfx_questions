@@ -31,7 +31,7 @@ pip freeze > $STARTDIR/requirements.txt
 # Get a fresh copy of TFX, go to a recent tag
 git clone https://github.com/tensorflow/tfx.git tfx-source
 pushd tfx-source
-git checkout tags/v0.24.1
+git checkout master 
 popd
 
 
