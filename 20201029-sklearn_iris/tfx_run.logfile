@@ -1,0 +1,338 @@
++ pushd /home/pmccarthy/sklearn_iris_test
+~/sklearn_iris_test ~/projects/tfx_questions/20201029-sklearn_iris
+++ conda info --base
++ CONDA_BASE=/opt/conda
++ source /opt/conda/etc/profile.d/conda.sh
+++ export CONDA_EXE=/opt/conda/bin/conda
+++ CONDA_EXE=/opt/conda/bin/conda
+++ export _CE_M=
+++ _CE_M=
+++ export _CE_CONDA=
+++ _CE_CONDA=
+++ export CONDA_PYTHON_EXE=/opt/conda/bin/python
+++ CONDA_PYTHON_EXE=/opt/conda/bin/python
+++ '[' -z x ']'
++ conda activate tfx_024_iris_sklearn
++ '[' 2 -lt 1 ']'
++ local cmd=activate
++ shift
++ case "$cmd" in
++ __conda_activate activate tfx_024_iris_sklearn
++ '[' -n '' ']'
++ local cmd=activate
++ shift
++ local ask_conda
++ CONDA_INTERNAL_OLDPATH=/home/pmccarthy/.vscode-server/bin/d2e414d9e4239a252d1ab117bd7067f125afd80a/bin:/usr/local/cuda/bin:/opt/conda/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games
++ __add_sys_prefix_to_path
++ '[' -n '' ']'
+++ dirname /opt/conda/bin/conda
++ SYSP=/opt/conda/bin
+++ dirname /opt/conda/bin
++ SYSP=/opt/conda
++ '[' -n '' ']'
++ PATH=/opt/conda/bin:/home/pmccarthy/.vscode-server/bin/d2e414d9e4239a252d1ab117bd7067f125afd80a/bin:/usr/local/cuda/bin:/opt/conda/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games
++ export PATH
+++ PS1=
+++ /opt/conda/bin/conda shell.posix activate tfx_024_iris_sklearn
++ ask_conda='. "/opt/conda/etc/conda/deactivate.d/glib_deactivate.sh"
+PS1='\''(tfx_024_iris_sklearn) '\''
+export PATH='\''/home/pmccarthy/.vscode-server/bin/d2e414d9e4239a252d1ab117bd7067f125afd80a/bin:/usr/local/cuda/bin:/opt/conda/envs/tfx_024_iris_sklearn/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games'\''
+export CONDA_PREFIX='\''/opt/conda/envs/tfx_024_iris_sklearn'\''
+export CONDA_SHLVL='\''2'\''
+export CONDA_DEFAULT_ENV='\''tfx_024_iris_sklearn'\''
+export CONDA_PROMPT_MODIFIER='\''(tfx_024_iris_sklearn) '\''
+export CONDA_EXE='\''/opt/conda/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/conda/bin/python'\''
+export CONDA_PREFIX_1='\''/opt/conda'\'''
++ rc=0
++ PATH=/home/pmccarthy/.vscode-server/bin/d2e414d9e4239a252d1ab117bd7067f125afd80a/bin:/usr/local/cuda/bin:/opt/conda/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games
++ eval '. "/opt/conda/etc/conda/deactivate.d/glib_deactivate.sh"
+PS1='\''(tfx_024_iris_sklearn) '\''
+export PATH='\''/home/pmccarthy/.vscode-server/bin/d2e414d9e4239a252d1ab117bd7067f125afd80a/bin:/usr/local/cuda/bin:/opt/conda/envs/tfx_024_iris_sklearn/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games'\''
+export CONDA_PREFIX='\''/opt/conda/envs/tfx_024_iris_sklearn'\''
+export CONDA_SHLVL='\''2'\''
+export CONDA_DEFAULT_ENV='\''tfx_024_iris_sklearn'\''
+export CONDA_PROMPT_MODIFIER='\''(tfx_024_iris_sklearn) '\''
+export CONDA_EXE='\''/opt/conda/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/conda/bin/python'\''
+export CONDA_PREFIX_1='\''/opt/conda'\'''
+++ . /opt/conda/etc/conda/deactivate.d/glib_deactivate.sh
++++ export GSETTINGS_SCHEMA_DIR=
++++ GSETTINGS_SCHEMA_DIR=
++++ unset GSETTINGS_SCHEMA_DIR_CONDA_BACKUP
++++ '[' -z ']'
++++ unset GSETTINGS_SCHEMA_DIR
+++ PS1='(tfx_024_iris_sklearn) '
+++ export PATH=/home/pmccarthy/.vscode-server/bin/d2e414d9e4239a252d1ab117bd7067f125afd80a/bin:/usr/local/cuda/bin:/opt/conda/envs/tfx_024_iris_sklearn/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games
+++ PATH=/home/pmccarthy/.vscode-server/bin/d2e414d9e4239a252d1ab117bd7067f125afd80a/bin:/usr/local/cuda/bin:/opt/conda/envs/tfx_024_iris_sklearn/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games
+++ export CONDA_PREFIX=/opt/conda/envs/tfx_024_iris_sklearn
+++ CONDA_PREFIX=/opt/conda/envs/tfx_024_iris_sklearn
+++ export CONDA_SHLVL=2
+++ CONDA_SHLVL=2
+++ export CONDA_DEFAULT_ENV=tfx_024_iris_sklearn
+++ CONDA_DEFAULT_ENV=tfx_024_iris_sklearn
+++ export 'CONDA_PROMPT_MODIFIER=(tfx_024_iris_sklearn) '
+++ CONDA_PROMPT_MODIFIER='(tfx_024_iris_sklearn) '
+++ export CONDA_EXE=/opt/conda/bin/conda
+++ CONDA_EXE=/opt/conda/bin/conda
+++ export _CE_M=
+++ _CE_M=
+++ export _CE_CONDA=
+++ _CE_CONDA=
+++ export CONDA_PYTHON_EXE=/opt/conda/bin/python
+++ CONDA_PYTHON_EXE=/opt/conda/bin/python
+++ export CONDA_PREFIX_1=/opt/conda
+++ CONDA_PREFIX_1=/opt/conda
++ '[' 0 '!=' 0 ']'
++ __conda_hashr
++ '[' -n '' ']'
++ '[' -n '' ']'
++ hash -r
++ cp -r tfx-source/tfx/examples/iris /home/pmccarthy/
++ sed -i s/tfx.dsl.component/tfx.component/ /home/pmccarthy/iris/experimental/iris_pipeline_sklearn_local.py
++ python /home/pmccarthy/iris/experimental/iris_pipeline_sklearn_local.py
+2020-10-29 16:05:03.701066: W tensorflow/stream_executor/platform/default/dso_loader.cc:59] Could not load dynamic library 'libcudart.so.10.1'; dlerror: libcudart.so.10.1: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/cuda/lib64:/usr/local/nccl2/lib:/usr/local/cuda/extras/CUPTI/lib64:/usr/local/cuda/lib64:/usr/local/nccl2/lib:/usr/local/cuda/extras/CUPTI/lib64
+2020-10-29 16:05:03.701132: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+/opt/conda/envs/tfx_024_iris_sklearn/lib/python3.7/site-packages/tfx/orchestration/data_types.py:191: UserWarning: RuntimeParameter is only supported on KubeflowDagRunner currently.
+  warnings.warn('RuntimeParameter is only supported on KubeflowDagRunner '
+INFO:absl:Excluding no splits because exclude_splits is not set.
+INFO:absl:Excluding no splits because exclude_splits is not set.
+INFO:absl:Excluding no splits because exclude_splits is not set.
+INFO:absl:Component CsvExampleGen depends on [].
+INFO:absl:Component CsvExampleGen is scheduled.
+INFO:absl:Component StatisticsGen depends on ['Run[CsvExampleGen]'].
+INFO:absl:Component StatisticsGen is scheduled.
+INFO:absl:Component SchemaGen depends on ['Run[StatisticsGen]'].
+INFO:absl:Component SchemaGen is scheduled.
+INFO:absl:Component ExampleValidator depends on ['Run[StatisticsGen]', 'Run[SchemaGen]'].
+INFO:absl:Component ExampleValidator is scheduled.
+INFO:absl:Component Trainer depends on ['Run[CsvExampleGen]', 'Run[SchemaGen]'].
+INFO:absl:Component Trainer is scheduled.
+INFO:absl:Component Pusher depends on ['Run[Trainer]'].
+INFO:absl:Component Pusher is scheduled.
+INFO:absl:Component CsvExampleGen is running.
+INFO:absl:Running driver for CsvExampleGen
+INFO:absl:MetadataStore with DB connection initialized
+INFO:absl:select span and version = (0, None)
+INFO:absl:latest span and version = (0, None)
+INFO:absl:Running executor for CsvExampleGen
+INFO:absl:Attempting to infer TFX Python dependency for beam
+INFO:absl:Copying all content from install dir /opt/conda/envs/tfx_024_iris_sklearn/lib/python3.7/site-packages/tfx to temp dir /tmp/tmps2129_lg/build/tfx
+INFO:absl:Generating a temp setup file at /tmp/tmps2129_lg/build/tfx/setup.py
+INFO:absl:Creating temporary sdist package, logs available at /tmp/tmps2129_lg/build/tfx/setup.log
+INFO:absl:Added --extra_package=/tmp/tmps2129_lg/build/tfx/dist/tfx_ephemeral-0.24.1.tar.gz to beam args
+INFO:absl:Generating examples.
+INFO:absl:Processing input csv data /home/pmccarthy/iris/data/* to TFExample.
+2020-10-29 16:05:10.089992: W tensorflow/stream_executor/platform/default/dso_loader.cc:59] Could not load dynamic library 'libcudart.so.10.1'; dlerror: libcudart.so.10.1: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/cuda/lib64:/usr/local/nccl2/lib:/usr/local/cuda/extras/CUPTI/lib64:/usr/local/cuda/lib64:/usr/local/nccl2/lib:/usr/local/cuda/extras/CUPTI/lib64
+2020-10-29 16:05:10.090066: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+2020-10-29 16:05:10.089992: W tensorflow/stream_executor/platform/default/dso_loader.cc:59] Could not load dynamic library 'libcudart.so.10.1'; dlerror: libcudart.so.10.1: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/cuda/lib64:/usr/local/nccl2/lib:/usr/local/cuda/extras/CUPTI/lib64:/usr/local/cuda/lib64:/usr/local/nccl2/lib:/usr/local/cuda/extras/CUPTI/lib64
+2020-10-29 16:05:10.090136: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+2020-10-29 16:05:10.091460: W tensorflow/stream_executor/platform/default/dso_loader.cc:59] Could not load dynamic library 'libcudart.so.10.1'; dlerror: libcudart.so.10.1: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/cuda/lib64:/usr/local/nccl2/lib:/usr/local/cuda/extras/CUPTI/lib64:/usr/local/cuda/lib64:/usr/local/nccl2/lib:/usr/local/cuda/extras/CUPTI/lib64
+2020-10-29 16:05:10.091538: W tensorflow/stream_executor/platform/default/dso_loader.cc:59] Could not load dynamic library 'libcudart.so.10.1'; dlerror: libcudart.so.10.1: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/cuda/lib64:/usr/local/nccl2/lib:/usr/local/cuda/extras/CUPTI/lib64:/usr/local/cuda/lib64:/usr/local/nccl2/lib:/usr/local/cuda/extras/CUPTI/lib64
+2020-10-29 16:05:10.091556: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+2020-10-29 16:05:10.091586: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+INFO:absl:Examples generated.
+INFO:absl:Running publisher for CsvExampleGen
+INFO:absl:MetadataStore with DB connection initialized
+INFO:absl:Component CsvExampleGen is finished.
+INFO:absl:Component StatisticsGen is running.
+INFO:absl:Running driver for StatisticsGen
+INFO:absl:MetadataStore with DB connection initialized
+INFO:absl:Running executor for StatisticsGen
+INFO:absl:Attempting to infer TFX Python dependency for beam
+INFO:absl:Copying all content from install dir /opt/conda/envs/tfx_024_iris_sklearn/lib/python3.7/site-packages/tfx to temp dir /tmp/tmp3bw1yylh/build/tfx
+INFO:absl:Generating a temp setup file at /tmp/tmp3bw1yylh/build/tfx/setup.py
+INFO:absl:Creating temporary sdist package, logs available at /tmp/tmp3bw1yylh/build/tfx/setup.log
+INFO:absl:Added --extra_package=/tmp/tmp3bw1yylh/build/tfx/dist/tfx_ephemeral-0.24.1.tar.gz to beam args
+INFO:absl:We decided to produce LargeList and LargeBinary types.
+INFO:absl:We decided to produce LargeList and LargeBinary types.
+INFO:absl:Generating statistics for split train.
+INFO:absl:Statistics for split train written to /home/pmccarthy/tfx/pipelines/iris_sklearn_local/StatisticsGen/statistics/47/train.
+INFO:absl:Generating statistics for split eval.
+INFO:absl:Statistics for split eval written to /home/pmccarthy/tfx/pipelines/iris_sklearn_local/StatisticsGen/statistics/47/eval.
+2020-10-29 16:05:22.344606: W tensorflow/stream_executor/platform/default/dso_loader.cc:59] Could not load dynamic library 'libcudart.so.10.1'; dlerror: libcudart.so.10.1: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/cuda/lib64:/usr/local/nccl2/lib:/usr/local/cuda/extras/CUPTI/lib64:/usr/local/cuda/lib64:/usr/local/nccl2/lib:/usr/local/cuda/extras/CUPTI/lib64
+2020-10-29 16:05:22.344610: W tensorflow/stream_executor/platform/default/dso_loader.cc:59] Could not load dynamic library 'libcudart.so.10.1'; dlerror: libcudart.so.10.1: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/cuda/lib64:/usr/local/nccl2/lib:/usr/local/cuda/extras/CUPTI/lib64:/usr/local/cuda/lib64:/usr/local/nccl2/lib:/usr/local/cuda/extras/CUPTI/lib64
+2020-10-29 16:05:22.344683: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+2020-10-29 16:05:22.344690: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+2020-10-29 16:05:22.344761: W tensorflow/stream_executor/platform/default/dso_loader.cc:59] Could not load dynamic library 'libcudart.so.10.1'; dlerror: libcudart.so.10.1: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/cuda/lib64:/usr/local/nccl2/lib:/usr/local/cuda/extras/CUPTI/lib64:/usr/local/cuda/lib64:/usr/local/nccl2/lib:/usr/local/cuda/extras/CUPTI/lib64
+2020-10-29 16:05:22.344786: W tensorflow/stream_executor/platform/default/dso_loader.cc:59] Could not load dynamic library 'libcudart.so.10.1'; dlerror: libcudart.so.10.1: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/cuda/lib64:/usr/local/nccl2/lib:/usr/local/cuda/extras/CUPTI/lib64:/usr/local/cuda/lib64:/usr/local/nccl2/lib:/usr/local/cuda/extras/CUPTI/lib64
+2020-10-29 16:05:22.344839: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+2020-10-29 16:05:22.344877: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+2020-10-29 16:05:25.474832: W tensorflow/stream_executor/platform/default/dso_loader.cc:59] Could not load dynamic library 'libcuda.so.1'; dlerror: libcuda.so.1: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/cuda/lib64:/usr/local/nccl2/lib:/usr/local/cuda/extras/CUPTI/lib64:/usr/local/cuda/lib64:/usr/local/nccl2/lib:/usr/local/cuda/extras/CUPTI/lib64
+2020-10-29 16:05:25.474907: W tensorflow/stream_executor/cuda/cuda_driver.cc:312] failed call to cuInit: UNKNOWN ERROR (303)
+2020-10-29 16:05:25.474950: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:156] kernel driver does not appear to be running on this host (pjm1021): /proc/driver/nvidia/version does not exist
+2020-10-29 16:05:25.475382: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN)to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2020-10-29 16:05:25.491917: I tensorflow/core/platform/profile_utils/cpu_utils.cc:104] CPU Frequency: 2300000000 Hz
+2020-10-29 16:05:25.492326: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x7fb2bb8fc2d0 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2020-10-29 16:05:25.492379: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+2020-10-29 16:05:25.540520: W tensorflow/stream_executor/platform/default/dso_loader.cc:59] Could not load dynamic library 'libcuda.so.1'; dlerror: libcuda.so.1: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/cuda/lib64:/usr/local/nccl2/lib:/usr/local/cuda/extras/CUPTI/lib64:/usr/local/cuda/lib64:/usr/local/nccl2/lib:/usr/local/cuda/extras/CUPTI/lib64
+2020-10-29 16:05:25.540600: W tensorflow/stream_executor/cuda/cuda_driver.cc:312] failed call to cuInit: UNKNOWN ERROR (303)
+2020-10-29 16:05:25.540660: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:156] kernel driver does not appear to be running on this host (pjm1021): /proc/driver/nvidia/version does not exist
+2020-10-29 16:05:25.541040: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN)to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2020-10-29 16:05:25.554299: I tensorflow/core/platform/profile_utils/cpu_utils.cc:104] CPU Frequency: 2300000000 Hz
+2020-10-29 16:05:25.554619: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x7f3a879017b0 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2020-10-29 16:05:25.554669: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+2020-10-29 16:05:25.566089: W tensorflow/stream_executor/platform/default/dso_loader.cc:59] Could not load dynamic library 'libcuda.so.1'; dlerror: libcuda.so.1: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/cuda/lib64:/usr/local/nccl2/lib:/usr/local/cuda/extras/CUPTI/lib64:/usr/local/cuda/lib64:/usr/local/nccl2/lib:/usr/local/cuda/extras/CUPTI/lib64
+2020-10-29 16:05:25.566158: W tensorflow/stream_executor/cuda/cuda_driver.cc:312] failed call to cuInit: UNKNOWN ERROR (303)
+2020-10-29 16:05:25.566218: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:156] kernel driver does not appear to be running on this host (pjm1021): /proc/driver/nvidia/version does not exist
+2020-10-29 16:05:25.566624: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN)to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2020-10-29 16:05:25.566928: W tensorflow/stream_executor/platform/default/dso_loader.cc:59] Could not load dynamic library 'libcuda.so.1'; dlerror: libcuda.so.1: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/cuda/lib64:/usr/local/nccl2/lib:/usr/local/cuda/extras/CUPTI/lib64:/usr/local/cuda/lib64:/usr/local/nccl2/lib:/usr/local/cuda/extras/CUPTI/lib64
+2020-10-29 16:05:25.567002: W tensorflow/stream_executor/cuda/cuda_driver.cc:312] failed call to cuInit: UNKNOWN ERROR (303)
+2020-10-29 16:05:25.567047: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:156] kernel driver does not appear to be running on this host (pjm1021): /proc/driver/nvidia/version does not exist
+2020-10-29 16:05:25.567365: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN)to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2020-10-29 16:05:25.579513: I tensorflow/core/platform/profile_utils/cpu_utils.cc:104] CPU Frequency: 2300000000 Hz
+2020-10-29 16:05:25.579863: I tensorflow/core/platform/profile_utils/cpu_utils.cc:104] CPU Frequency: 2300000000 Hz
+2020-10-29 16:05:25.579887: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x7f6eb38fc4e0 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2020-10-29 16:05:25.579988: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+2020-10-29 16:05:25.580162: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x7fe37b8fc1f0 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2020-10-29 16:05:25.580206: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+INFO:absl:Running publisher for StatisticsGen
+INFO:absl:MetadataStore with DB connection initialized
+INFO:absl:Component StatisticsGen is finished.
+INFO:absl:Component SchemaGen is running.
+INFO:absl:Running driver for SchemaGen
+INFO:absl:MetadataStore with DB connection initialized
+INFO:absl:Running executor for SchemaGen
+INFO:absl:Attempting to infer TFX Python dependency for beam
+INFO:absl:Copying all content from install dir /opt/conda/envs/tfx_024_iris_sklearn/lib/python3.7/site-packages/tfx to temp dir /tmp/tmpvtrxg85h/build/tfx
+INFO:absl:Generating a temp setup file at /tmp/tmpvtrxg85h/build/tfx/setup.py
+INFO:absl:Creating temporary sdist package, logs available at /tmp/tmpvtrxg85h/build/tfx/setup.log
+INFO:absl:Added --extra_package=/tmp/tmpvtrxg85h/build/tfx/dist/tfx_ephemeral-0.24.1.tar.gz to beam args
+INFO:absl:Processing schema from statistics for split train.
+WARNING:tensorflow:From /opt/conda/envs/tfx_024_iris_sklearn/lib/python3.7/site-packages/tensorflow_data_validation/utils/stats_util.py:229: tf_record_iterator (from tensorflow.python.lib.io.tf_record) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use eager execution and: 
+`tf.data.TFRecordDataset(path)`
+INFO:absl:Processing schema from statistics for split eval.
+INFO:absl:Schema written to /home/pmccarthy/tfx/pipelines/iris_sklearn_local/SchemaGen/schema/48/schema.pbtxt.
+INFO:absl:Running publisher for SchemaGen
+INFO:absl:MetadataStore with DB connection initialized
+INFO:absl:Component SchemaGen is finished.
+INFO:absl:Component ExampleValidator is running.
+INFO:absl:Running driver for ExampleValidator
+INFO:absl:MetadataStore with DB connection initialized
+INFO:absl:Running executor for ExampleValidator
+INFO:absl:Attempting to infer TFX Python dependency for beam
+INFO:absl:Copying all content from install dir /opt/conda/envs/tfx_024_iris_sklearn/lib/python3.7/site-packages/tfx to temp dir /tmp/tmpbttald6r/build/tfx
+INFO:absl:Generating a temp setup file at /tmp/tmpbttald6r/build/tfx/setup.py
+INFO:absl:Creating temporary sdist package, logs available at /tmp/tmpbttald6r/build/tfx/setup.log
+INFO:absl:Added --extra_package=/tmp/tmpbttald6r/build/tfx/dist/tfx_ephemeral-0.24.1.tar.gz to beam args
+INFO:absl:Validating schema against the computed statistics for split train.
+INFO:absl:Validation complete for split train. Anomalies written to /home/pmccarthy/tfx/pipelines/iris_sklearn_local/ExampleValidator/anomalies/49/train.
+INFO:absl:Validating schema against the computed statistics for split eval.
+INFO:absl:Validation complete for split eval. Anomalies written to /home/pmccarthy/tfx/pipelines/iris_sklearn_local/ExampleValidator/anomalies/49/eval.
+INFO:absl:Running publisher for ExampleValidator
+INFO:absl:MetadataStore with DB connection initialized
+INFO:absl:Component ExampleValidator is finished.
+INFO:absl:Component Trainer is running.
+INFO:absl:Running driver for Trainer
+INFO:absl:MetadataStore with DB connection initialized
+INFO:absl:Running executor for Trainer
+INFO:absl:Attempting to infer TFX Python dependency for beam
+INFO:absl:Copying all content from install dir /opt/conda/envs/tfx_024_iris_sklearn/lib/python3.7/site-packages/tfx to temp dir /tmp/tmpuca9ufx9/build/tfx
+INFO:absl:Generating a temp setup file at /tmp/tmpuca9ufx9/build/tfx/setup.py
+INFO:absl:Creating temporary sdist package, logs available at /tmp/tmpuca9ufx9/build/tfx/setup.log
+INFO:absl:Added --extra_package=/tmp/tmpuca9ufx9/build/tfx/dist/tfx_ephemeral-0.24.1.tar.gz to beam args
+INFO:absl:Train on the 'train' split when train_args.splits is not set.
+INFO:absl:Evaluate on the 'eval' split when eval_args.splits is not set.
+Traceback (most recent call last):
+  File "apache_beam/runners/common.py", line 1213, in apache_beam.runners.common.DoFnRunner.process
+  File "apache_beam/runners/common.py", line 742, in apache_beam.runners.common.PerWindowInvoker.invoke_process
+  File "apache_beam/runners/common.py", line 867, in apache_beam.runners.common.PerWindowInvoker._invoke_process_per_window
+  File "/opt/conda/envs/tfx_024_iris_sklearn/lib/python3.7/site-packages/tfx/orchestration/beam/beam_dag_runner.py", line 84, in process
+    self._run_component()
+  File "/opt/conda/envs/tfx_024_iris_sklearn/lib/python3.7/site-packages/tfx/orchestration/beam/beam_dag_runner.py", line 88, in _run_component
+    self._component_launcher.launch()
+  File "/opt/conda/envs/tfx_024_iris_sklearn/lib/python3.7/site-packages/tfx/orchestration/launcher/base_component_launcher.py", line 205, in launch
+    execution_decision.exec_properties)
+  File "/opt/conda/envs/tfx_024_iris_sklearn/lib/python3.7/site-packages/tfx/orchestration/launcher/in_process_component_launcher.py", line 67, in _run_executor
+    executor.Do(input_dict, output_dict, exec_properties)
+  File "/opt/conda/envs/tfx_024_iris_sklearn/lib/python3.7/site-packages/tfx/components/trainer/executor.py", line 215, in Do
+    run_fn = udf_utils.get_fn(exec_properties, 'run_fn')
+  File "/opt/conda/envs/tfx_024_iris_sklearn/lib/python3.7/site-packages/tfx/components/util/udf_utils.py", line 43, in get_fn
+    exec_properties[_MODULE_FILE_KEY], fn_name)
+  File "/opt/conda/envs/tfx_024_iris_sklearn/lib/python3.7/site-packages/tfx/utils/import_utils.py", line 67, in import_func_from_source
+    loader.exec_module(user_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/pmccarthy/iris/experimental/iris_utils_sklearn.py", line 30, in <module>
+    from tfx.dsl.io import fileio
+ModuleNotFoundError: No module named 'tfx.dsl.io'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/pmccarthy/iris/experimental/iris_pipeline_sklearn_local.py", line 140, in <module>
+    beam_pipeline_args=_beam_pipeline_args))
+  File "/opt/conda/envs/tfx_024_iris_sklearn/lib/python3.7/site-packages/tfx/orchestration/beam/beam_dag_runner.py", line 165, in run
+    absl.logging.info('Component %s is scheduled.', component_id)
+  File "/opt/conda/envs/tfx_024_iris_sklearn/lib/python3.7/site-packages/apache_beam/pipeline.py", line 568, in __exit__
+    self.result = self.run()
+  File "/opt/conda/envs/tfx_024_iris_sklearn/lib/python3.7/site-packages/apache_beam/pipeline.py", line 547, in run
+    return self.runner.run_pipeline(self, self._options)
+  File "/opt/conda/envs/tfx_024_iris_sklearn/lib/python3.7/site-packages/apache_beam/runners/direct/direct_runner.py", line 119, in run_pipeline
+    return runner.run_pipeline(pipeline, options)
+  File "/opt/conda/envs/tfx_024_iris_sklearn/lib/python3.7/site-packages/apache_beam/runners/portability/fn_api_runner/fn_runner.py", line 176, in run_pipeline
+    pipeline.to_runner_api(default_environment=self._default_environment))
+  File "/opt/conda/envs/tfx_024_iris_sklearn/lib/python3.7/site-packages/apache_beam/runners/portability/fn_api_runner/fn_runner.py", line 186, in run_via_runner_api
+    return self.run_stages(stage_context, stages)
+  File "/opt/conda/envs/tfx_024_iris_sklearn/lib/python3.7/site-packages/apache_beam/runners/portability/fn_api_runner/fn_runner.py", line 346, in run_stages
+    bundle_context_manager,
+  File "/opt/conda/envs/tfx_024_iris_sklearn/lib/python3.7/site-packages/apache_beam/runners/portability/fn_api_runner/fn_runner.py", line 534, in _run_stage
+    bundle_manager)
+  File "/opt/conda/envs/tfx_024_iris_sklearn/lib/python3.7/site-packages/apache_beam/runners/portability/fn_api_runner/fn_runner.py", line 572, in _run_bundle
+    data_input, data_output, input_timers, expected_timer_output)
+  File "/opt/conda/envs/tfx_024_iris_sklearn/lib/python3.7/site-packages/apache_beam/runners/portability/fn_api_runner/fn_runner.py", line 852, in process_bundle
+    result_future = self._worker_handler.control_conn.push(process_bundle_req)
+  File "/opt/conda/envs/tfx_024_iris_sklearn/lib/python3.7/site-packages/apache_beam/runners/portability/fn_api_runner/worker_handlers.py", line 353, in push
+    response = self.worker.do_instruction(request)
+  File "/opt/conda/envs/tfx_024_iris_sklearn/lib/python3.7/site-packages/apache_beam/runners/worker/sdk_worker.py", line 484, in do_instruction
+    getattr(request, request_type), request.instruction_id)
+  File "/opt/conda/envs/tfx_024_iris_sklearn/lib/python3.7/site-packages/apache_beam/runners/worker/sdk_worker.py", line 519, in process_bundle
+    bundle_processor.process_bundle(instruction_id))
+  File "/opt/conda/envs/tfx_024_iris_sklearn/lib/python3.7/site-packages/apache_beam/runners/worker/bundle_processor.py", line 985, in process_bundle
+    element.data)
+  File "/opt/conda/envs/tfx_024_iris_sklearn/lib/python3.7/site-packages/apache_beam/runners/worker/bundle_processor.py", line 221, in process_encoded
+    self.output(decoded_value)
+  File "apache_beam/runners/worker/operations.py", line 354, in apache_beam.runners.worker.operations.Operation.output
+  File "apache_beam/runners/worker/operations.py", line 356, in apache_beam.runners.worker.operations.Operation.output
+  File "apache_beam/runners/worker/operations.py", line 218, in apache_beam.runners.worker.operations.SingletonConsumerSet.receive
+  File "apache_beam/runners/worker/operations.py", line 703, in apache_beam.runners.worker.operations.DoOperation.process
+  File "apache_beam/runners/worker/operations.py", line 704, in apache_beam.runners.worker.operations.DoOperation.process
+  File "apache_beam/runners/common.py", line 1215, in apache_beam.runners.common.DoFnRunner.process
+  File "apache_beam/runners/common.py", line 1294, in apache_beam.runners.common.DoFnRunner._reraise_augmented
+  File "/opt/conda/envs/tfx_024_iris_sklearn/lib/python3.7/site-packages/future/utils/__init__.py", line 446, in raise_with_traceback
+    raise exc.with_traceback(traceback)
+  File "apache_beam/runners/common.py", line 1213, in apache_beam.runners.common.DoFnRunner.process
+  File "apache_beam/runners/common.py", line 742, in apache_beam.runners.common.PerWindowInvoker.invoke_process
+  File "apache_beam/runners/common.py", line 867, in apache_beam.runners.common.PerWindowInvoker._invoke_process_per_window
+  File "/opt/conda/envs/tfx_024_iris_sklearn/lib/python3.7/site-packages/tfx/orchestration/beam/beam_dag_runner.py", line 84, in process
+    self._run_component()
+  File "/opt/conda/envs/tfx_024_iris_sklearn/lib/python3.7/site-packages/tfx/orchestration/beam/beam_dag_runner.py", line 88, in _run_component
+    self._component_launcher.launch()
+  File "/opt/conda/envs/tfx_024_iris_sklearn/lib/python3.7/site-packages/tfx/orchestration/launcher/base_component_launcher.py", line 205, in launch
+    execution_decision.exec_properties)
+  File "/opt/conda/envs/tfx_024_iris_sklearn/lib/python3.7/site-packages/tfx/orchestration/launcher/in_process_component_launcher.py", line 67, in _run_executor
+    executor.Do(input_dict, output_dict, exec_properties)
+  File "/opt/conda/envs/tfx_024_iris_sklearn/lib/python3.7/site-packages/tfx/components/trainer/executor.py", line 215, in Do
+    run_fn = udf_utils.get_fn(exec_properties, 'run_fn')
+  File "/opt/conda/envs/tfx_024_iris_sklearn/lib/python3.7/site-packages/tfx/components/util/udf_utils.py", line 43, in get_fn
+    exec_properties[_MODULE_FILE_KEY], fn_name)
+  File "/opt/conda/envs/tfx_024_iris_sklearn/lib/python3.7/site-packages/tfx/utils/import_utils.py", line 67, in import_func_from_source
+    loader.exec_module(user_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/pmccarthy/iris/experimental/iris_utils_sklearn.py", line 30, in <module>
+    from tfx.dsl.io import fileio
+ModuleNotFoundError: No module named 'tfx.dsl.io' [while running 'Run[Trainer]']
++ popd
+~/projects/tfx_questions/20201029-sklearn_iris
++ set +x
