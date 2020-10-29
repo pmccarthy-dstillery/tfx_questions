@@ -93,10 +93,9 @@ export CONDA_PREFIX_1='\''/opt/conda'\'''
 + '[' -n '' ']'
 + hash -r
 + cp -r tfx-source/tfx/examples/iris /home/pmccarthy/
-+ sed -i s/tfx.dsl.component/tfx.component/ /home/pmccarthy/iris/experimental/iris_pipeline_sklearn_local.py
 + python /home/pmccarthy/iris/experimental/iris_pipeline_sklearn_local.py
-2020-10-29 16:46:57.351793: W tensorflow/stream_executor/platform/default/dso_loader.cc:59] Could not load dynamic library 'libcudart.so.10.1'; dlerror: libcudart.so.10.1: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/cuda/lib64:/usr/local/nccl2/lib:/usr/local/cuda/extras/CUPTI/lib64:/usr/local/cuda/lib64:/usr/local/nccl2/lib:/usr/local/cuda/extras/CUPTI/lib64
-2020-10-29 16:46:57.351855: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+2020-10-29 17:25:27.674187: W tensorflow/stream_executor/platform/default/dso_loader.cc:59] Could not load dynamic library 'libcudart.so.10.1'; dlerror: libcudart.so.10.1: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/cuda/lib64:/usr/local/nccl2/lib:/usr/local/cuda/extras/CUPTI/lib64:/usr/local/cuda/lib64:/usr/local/nccl2/lib:/usr/local/cuda/extras/CUPTI/lib64
+2020-10-29 17:25:27.674285: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
 /opt/conda/envs/tfx_024_iris_sklearn/lib/python3.7/site-packages/tfx/orchestration/data_types.py:191: UserWarning: RuntimeParameter is only supported on KubeflowDagRunner currently.
   warnings.warn('RuntimeParameter is only supported on KubeflowDagRunner '
 INFO:absl:Excluding no splits because exclude_splits is not set.
@@ -108,7 +107,7 @@ INFO:absl:Component StatisticsGen depends on ['Run[CsvExampleGen]'].
 INFO:absl:Component StatisticsGen is scheduled.
 INFO:absl:Component SchemaGen depends on ['Run[StatisticsGen]'].
 INFO:absl:Component SchemaGen is scheduled.
-INFO:absl:Component ExampleValidator depends on ['Run[SchemaGen]', 'Run[StatisticsGen]'].
+INFO:absl:Component ExampleValidator depends on ['Run[StatisticsGen]', 'Run[SchemaGen]'].
 INFO:absl:Component ExampleValidator is scheduled.
 INFO:absl:Component Trainer depends on ['Run[SchemaGen]', 'Run[CsvExampleGen]'].
 INFO:absl:Component Trainer is scheduled.
@@ -121,20 +120,20 @@ INFO:absl:select span and version = (0, None)
 INFO:absl:latest span and version = (0, None)
 INFO:absl:Running executor for CsvExampleGen
 INFO:absl:Attempting to infer TFX Python dependency for beam
-INFO:absl:Copying all content from install dir /opt/conda/envs/tfx_024_iris_sklearn/lib/python3.7/site-packages/tfx to temp dir /tmp/tmp3ybjx0um/build/tfx
-INFO:absl:Generating a temp setup file at /tmp/tmp3ybjx0um/build/tfx/setup.py
-INFO:absl:Creating temporary sdist package, logs available at /tmp/tmp3ybjx0um/build/tfx/setup.log
-INFO:absl:Added --extra_package=/tmp/tmp3ybjx0um/build/tfx/dist/tfx_ephemeral-0.24.1.tar.gz to beam args
+INFO:absl:Copying all content from install dir /opt/conda/envs/tfx_024_iris_sklearn/lib/python3.7/site-packages/tfx to temp dir /tmp/tmp1yzeql3j/build/tfx
+INFO:absl:Generating a temp setup file at /tmp/tmp1yzeql3j/build/tfx/setup.py
+INFO:absl:Creating temporary sdist package, logs available at /tmp/tmp1yzeql3j/build/tfx/setup.log
+INFO:absl:Added --extra_package=/tmp/tmp1yzeql3j/build/tfx/dist/tfx_ephemeral-0.24.1.tar.gz to beam args
 INFO:absl:Generating examples.
 INFO:absl:Processing input csv data /home/pmccarthy/iris/data/* to TFExample.
-2020-10-29 16:47:03.742829: W tensorflow/stream_executor/platform/default/dso_loader.cc:59] Could not load dynamic library 'libcudart.so.10.1'; dlerror: libcudart.so.10.1: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/cuda/lib64:/usr/local/nccl2/lib:/usr/local/cuda/extras/CUPTI/lib64:/usr/local/cuda/lib64:/usr/local/nccl2/lib:/usr/local/cuda/extras/CUPTI/lib64
-2020-10-29 16:47:03.742938: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
-2020-10-29 16:47:03.769161: W tensorflow/stream_executor/platform/default/dso_loader.cc:59] Could not load dynamic library 'libcudart.so.10.1'; dlerror: libcudart.so.10.1: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/cuda/lib64:/usr/local/nccl2/lib:/usr/local/cuda/extras/CUPTI/lib64:/usr/local/cuda/lib64:/usr/local/nccl2/lib:/usr/local/cuda/extras/CUPTI/lib64
-2020-10-29 16:47:03.769264: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
-2020-10-29 16:47:03.773865: W tensorflow/stream_executor/platform/default/dso_loader.cc:59] Could not load dynamic library 'libcudart.so.10.1'; dlerror: libcudart.so.10.1: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/cuda/lib64:/usr/local/nccl2/lib:/usr/local/cuda/extras/CUPTI/lib64:/usr/local/cuda/lib64:/usr/local/nccl2/lib:/usr/local/cuda/extras/CUPTI/lib64
-2020-10-29 16:47:03.773961: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
-2020-10-29 16:47:03.798544: W tensorflow/stream_executor/platform/default/dso_loader.cc:59] Could not load dynamic library 'libcudart.so.10.1'; dlerror: libcudart.so.10.1: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/cuda/lib64:/usr/local/nccl2/lib:/usr/local/cuda/extras/CUPTI/lib64:/usr/local/cuda/lib64:/usr/local/nccl2/lib:/usr/local/cuda/extras/CUPTI/lib64
-2020-10-29 16:47:03.798651: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+2020-10-29 17:25:34.507119: W tensorflow/stream_executor/platform/default/dso_loader.cc:59] Could not load dynamic library 'libcudart.so.10.1'; dlerror: libcudart.so.10.1: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/cuda/lib64:/usr/local/nccl2/lib:/usr/local/cuda/extras/CUPTI/lib64:/usr/local/cuda/lib64:/usr/local/nccl2/lib:/usr/local/cuda/extras/CUPTI/lib64
+2020-10-29 17:25:34.507232: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+2020-10-29 17:25:34.507136: W tensorflow/stream_executor/platform/default/dso_loader.cc:59] Could not load dynamic library 'libcudart.so.10.1'; dlerror: libcudart.so.10.1: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/cuda/lib64:/usr/local/nccl2/lib:/usr/local/cuda/extras/CUPTI/lib64:/usr/local/cuda/lib64:/usr/local/nccl2/lib:/usr/local/cuda/extras/CUPTI/lib64
+2020-10-29 17:25:34.507310: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+2020-10-29 17:25:34.509878: W tensorflow/stream_executor/platform/default/dso_loader.cc:59] Could not load dynamic library 'libcudart.so.10.1'; dlerror: libcudart.so.10.1: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/cuda/lib64:/usr/local/nccl2/lib:/usr/local/cuda/extras/CUPTI/lib64:/usr/local/cuda/lib64:/usr/local/nccl2/lib:/usr/local/cuda/extras/CUPTI/lib64
+2020-10-29 17:25:34.509964: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+2020-10-29 17:25:34.583178: W tensorflow/stream_executor/platform/default/dso_loader.cc:59] Could not load dynamic library 'libcudart.so.10.1'; dlerror: libcudart.so.10.1: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/cuda/lib64:/usr/local/nccl2/lib:/usr/local/cuda/extras/CUPTI/lib64:/usr/local/cuda/lib64:/usr/local/nccl2/lib:/usr/local/cuda/extras/CUPTI/lib64
+2020-10-29 17:25:34.583264: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
 INFO:absl:Examples generated.
 INFO:absl:Running publisher for CsvExampleGen
 INFO:absl:MetadataStore with DB connection initialized
@@ -144,56 +143,56 @@ INFO:absl:Running driver for StatisticsGen
 INFO:absl:MetadataStore with DB connection initialized
 INFO:absl:Running executor for StatisticsGen
 INFO:absl:Attempting to infer TFX Python dependency for beam
-INFO:absl:Copying all content from install dir /opt/conda/envs/tfx_024_iris_sklearn/lib/python3.7/site-packages/tfx to temp dir /tmp/tmpnp2uxvm_/build/tfx
-INFO:absl:Generating a temp setup file at /tmp/tmpnp2uxvm_/build/tfx/setup.py
-INFO:absl:Creating temporary sdist package, logs available at /tmp/tmpnp2uxvm_/build/tfx/setup.log
-INFO:absl:Added --extra_package=/tmp/tmpnp2uxvm_/build/tfx/dist/tfx_ephemeral-0.24.1.tar.gz to beam args
+INFO:absl:Copying all content from install dir /opt/conda/envs/tfx_024_iris_sklearn/lib/python3.7/site-packages/tfx to temp dir /tmp/tmprcxbz4v3/build/tfx
+INFO:absl:Generating a temp setup file at /tmp/tmprcxbz4v3/build/tfx/setup.py
+INFO:absl:Creating temporary sdist package, logs available at /tmp/tmprcxbz4v3/build/tfx/setup.log
+INFO:absl:Added --extra_package=/tmp/tmprcxbz4v3/build/tfx/dist/tfx_ephemeral-0.24.1.tar.gz to beam args
 INFO:absl:We decided to produce LargeList and LargeBinary types.
 INFO:absl:We decided to produce LargeList and LargeBinary types.
 INFO:absl:Generating statistics for split train.
-INFO:absl:Statistics for split train written to /home/pmccarthy/tfx/pipelines/iris_sklearn_local/StatisticsGen/statistics/52/train.
+INFO:absl:Statistics for split train written to /home/pmccarthy/tfx/pipelines/iris_sklearn_local/StatisticsGen/statistics/56/train.
 INFO:absl:Generating statistics for split eval.
-INFO:absl:Statistics for split eval written to /home/pmccarthy/tfx/pipelines/iris_sklearn_local/StatisticsGen/statistics/52/eval.
-2020-10-29 16:47:16.045532: W tensorflow/stream_executor/platform/default/dso_loader.cc:59] Could not load dynamic library 'libcudart.so.10.1'; dlerror: libcudart.so.10.1: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/cuda/lib64:/usr/local/nccl2/lib:/usr/local/cuda/extras/CUPTI/lib64:/usr/local/cuda/lib64:/usr/local/nccl2/lib:/usr/local/cuda/extras/CUPTI/lib64
-2020-10-29 16:47:16.045643: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
-2020-10-29 16:47:16.046115: W tensorflow/stream_executor/platform/default/dso_loader.cc:59] Could not load dynamic library 'libcudart.so.10.1'; dlerror: libcudart.so.10.1: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/cuda/lib64:/usr/local/nccl2/lib:/usr/local/cuda/extras/CUPTI/lib64:/usr/local/cuda/lib64:/usr/local/nccl2/lib:/usr/local/cuda/extras/CUPTI/lib64
-2020-10-29 16:47:16.046112: W tensorflow/stream_executor/platform/default/dso_loader.cc:59] Could not load dynamic library 'libcudart.so.10.1'; dlerror: libcudart.so.10.1: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/cuda/lib64:/usr/local/nccl2/lib:/usr/local/cuda/extras/CUPTI/lib64:/usr/local/cuda/lib64:/usr/local/nccl2/lib:/usr/local/cuda/extras/CUPTI/lib64
-2020-10-29 16:47:16.046203: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
-2020-10-29 16:47:16.046237: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
-2020-10-29 16:47:16.079759: W tensorflow/stream_executor/platform/default/dso_loader.cc:59] Could not load dynamic library 'libcudart.so.10.1'; dlerror: libcudart.so.10.1: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/cuda/lib64:/usr/local/nccl2/lib:/usr/local/cuda/extras/CUPTI/lib64:/usr/local/cuda/lib64:/usr/local/nccl2/lib:/usr/local/cuda/extras/CUPTI/lib64
-2020-10-29 16:47:16.079869: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
-2020-10-29 16:47:19.939345: W tensorflow/stream_executor/platform/default/dso_loader.cc:59] Could not load dynamic library 'libcuda.so.1'; dlerror: libcuda.so.1: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/cuda/lib64:/usr/local/nccl2/lib:/usr/local/cuda/extras/CUPTI/lib64:/usr/local/cuda/lib64:/usr/local/nccl2/lib:/usr/local/cuda/extras/CUPTI/lib64
-2020-10-29 16:47:19.939430: W tensorflow/stream_executor/cuda/cuda_driver.cc:312] failed call to cuInit: UNKNOWN ERROR (303)
-2020-10-29 16:47:19.939478: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:156] kernel driver does not appear to be running on this host (pjm1021): /proc/driver/nvidia/version does not exist
-2020-10-29 16:47:19.939921: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN)to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+INFO:absl:Statistics for split eval written to /home/pmccarthy/tfx/pipelines/iris_sklearn_local/StatisticsGen/statistics/56/eval.
+2020-10-29 17:25:47.078457: W tensorflow/stream_executor/platform/default/dso_loader.cc:59] Could not load dynamic library 'libcudart.so.10.1'; dlerror: libcudart.so.10.1: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/cuda/lib64:/usr/local/nccl2/lib:/usr/local/cuda/extras/CUPTI/lib64:/usr/local/cuda/lib64:/usr/local/nccl2/lib:/usr/local/cuda/extras/CUPTI/lib64
+2020-10-29 17:25:47.078461: W tensorflow/stream_executor/platform/default/dso_loader.cc:59] Could not load dynamic library 'libcudart.so.10.1'; dlerror: libcudart.so.10.1: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/cuda/lib64:/usr/local/nccl2/lib:/usr/local/cuda/extras/CUPTI/lib64:/usr/local/cuda/lib64:/usr/local/nccl2/lib:/usr/local/cuda/extras/CUPTI/lib64
+2020-10-29 17:25:47.078576: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+2020-10-29 17:25:47.078625: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+2020-10-29 17:25:47.080058: W tensorflow/stream_executor/platform/default/dso_loader.cc:59] Could not load dynamic library 'libcudart.so.10.1'; dlerror: libcudart.so.10.1: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/cuda/lib64:/usr/local/nccl2/lib:/usr/local/cuda/extras/CUPTI/lib64:/usr/local/cuda/lib64:/usr/local/nccl2/lib:/usr/local/cuda/extras/CUPTI/lib64
+2020-10-29 17:25:47.080187: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+2020-10-29 17:25:47.099041: W tensorflow/stream_executor/platform/default/dso_loader.cc:59] Could not load dynamic library 'libcudart.so.10.1'; dlerror: libcudart.so.10.1: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/cuda/lib64:/usr/local/nccl2/lib:/usr/local/cuda/extras/CUPTI/lib64:/usr/local/cuda/lib64:/usr/local/nccl2/lib:/usr/local/cuda/extras/CUPTI/lib64
+2020-10-29 17:25:47.099126: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+2020-10-29 17:25:50.291680: W tensorflow/stream_executor/platform/default/dso_loader.cc:59] Could not load dynamic library 'libcuda.so.1'; dlerror: libcuda.so.1: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/cuda/lib64:/usr/local/nccl2/lib:/usr/local/cuda/extras/CUPTI/lib64:/usr/local/cuda/lib64:/usr/local/nccl2/lib:/usr/local/cuda/extras/CUPTI/lib64
+2020-10-29 17:25:50.291735: W tensorflow/stream_executor/cuda/cuda_driver.cc:312] failed call to cuInit: UNKNOWN ERROR (303)
+2020-10-29 17:25:50.291772: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:156] kernel driver does not appear to be running on this host (pjm1021): /proc/driver/nvidia/version does not exist
+2020-10-29 17:25:50.292091: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN)to use the following CPU instructions in performance-critical operations:  AVX2 FMA
 To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
-2020-10-29 16:47:19.957389: I tensorflow/core/platform/profile_utils/cpu_utils.cc:104] CPU Frequency: 2300000000 Hz
-2020-10-29 16:47:19.957739: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x7f121b900f20 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
-2020-10-29 16:47:19.957793: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
-2020-10-29 16:47:19.982195: W tensorflow/stream_executor/platform/default/dso_loader.cc:59] Could not load dynamic library 'libcuda.so.1'; dlerror: libcuda.so.1: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/cuda/lib64:/usr/local/nccl2/lib:/usr/local/cuda/extras/CUPTI/lib64:/usr/local/cuda/lib64:/usr/local/nccl2/lib:/usr/local/cuda/extras/CUPTI/lib64
-2020-10-29 16:47:19.982276: W tensorflow/stream_executor/cuda/cuda_driver.cc:312] failed call to cuInit: UNKNOWN ERROR (303)
-2020-10-29 16:47:19.982340: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:156] kernel driver does not appear to be running on this host (pjm1021): /proc/driver/nvidia/version does not exist
-2020-10-29 16:47:19.982758: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN)to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+2020-10-29 17:25:50.303239: I tensorflow/core/platform/profile_utils/cpu_utils.cc:104] CPU Frequency: 2300000000 Hz
+2020-10-29 17:25:50.303673: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x7f9bd38fbb50 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2020-10-29 17:25:50.303745: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+2020-10-29 17:25:50.314268: W tensorflow/stream_executor/platform/default/dso_loader.cc:59] Could not load dynamic library 'libcuda.so.1'; dlerror: libcuda.so.1: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/cuda/lib64:/usr/local/nccl2/lib:/usr/local/cuda/extras/CUPTI/lib64:/usr/local/cuda/lib64:/usr/local/nccl2/lib:/usr/local/cuda/extras/CUPTI/lib64
+2020-10-29 17:25:50.314372: W tensorflow/stream_executor/cuda/cuda_driver.cc:312] failed call to cuInit: UNKNOWN ERROR (303)
+2020-10-29 17:25:50.314439: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:156] kernel driver does not appear to be running on this host (pjm1021): /proc/driver/nvidia/version does not exist
+2020-10-29 17:25:50.314884: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN)to use the following CPU instructions in performance-critical operations:  AVX2 FMA
 To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
-2020-10-29 16:47:19.989807: W tensorflow/stream_executor/platform/default/dso_loader.cc:59] Could not load dynamic library 'libcuda.so.1'; dlerror: libcuda.so.1: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/cuda/lib64:/usr/local/nccl2/lib:/usr/local/cuda/extras/CUPTI/lib64:/usr/local/cuda/lib64:/usr/local/nccl2/lib:/usr/local/cuda/extras/CUPTI/lib64
-2020-10-29 16:47:19.989904: W tensorflow/stream_executor/cuda/cuda_driver.cc:312] failed call to cuInit: UNKNOWN ERROR (303)
-2020-10-29 16:47:19.989974: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:156] kernel driver does not appear to be running on this host (pjm1021): /proc/driver/nvidia/version does not exist
-2020-10-29 16:47:19.990371: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN)to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+2020-10-29 17:25:50.325607: I tensorflow/core/platform/profile_utils/cpu_utils.cc:104] CPU Frequency: 2300000000 Hz
+2020-10-29 17:25:50.325928: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x7fb2a38fc3a0 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2020-10-29 17:25:50.325980: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+2020-10-29 17:25:50.327828: W tensorflow/stream_executor/platform/default/dso_loader.cc:59] Could not load dynamic library 'libcuda.so.1'; dlerror: libcuda.so.1: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/cuda/lib64:/usr/local/nccl2/lib:/usr/local/cuda/extras/CUPTI/lib64:/usr/local/cuda/lib64:/usr/local/nccl2/lib:/usr/local/cuda/extras/CUPTI/lib64
+2020-10-29 17:25:50.327899: W tensorflow/stream_executor/cuda/cuda_driver.cc:312] failed call to cuInit: UNKNOWN ERROR (303)
+2020-10-29 17:25:50.327949: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:156] kernel driver does not appear to be running on this host (pjm1021): /proc/driver/nvidia/version does not exist
+2020-10-29 17:25:50.328327: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN)to use the following CPU instructions in performance-critical operations:  AVX2 FMA
 To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
-2020-10-29 16:47:19.999220: I tensorflow/core/platform/profile_utils/cpu_utils.cc:104] CPU Frequency: 2300000000 Hz
-2020-10-29 16:47:19.999585: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x7fc4cb8fbca0 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
-2020-10-29 16:47:19.999633: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
-2020-10-29 16:47:20.000240: W tensorflow/stream_executor/platform/default/dso_loader.cc:59] Could not load dynamic library 'libcuda.so.1'; dlerror: libcuda.so.1: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/cuda/lib64:/usr/local/nccl2/lib:/usr/local/cuda/extras/CUPTI/lib64:/usr/local/cuda/lib64:/usr/local/nccl2/lib:/usr/local/cuda/extras/CUPTI/lib64
-2020-10-29 16:47:20.000324: W tensorflow/stream_executor/cuda/cuda_driver.cc:312] failed call to cuInit: UNKNOWN ERROR (303)
-2020-10-29 16:47:20.000393: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:156] kernel driver does not appear to be running on this host (pjm1021): /proc/driver/nvidia/version does not exist
-2020-10-29 16:47:20.000820: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN)to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+2020-10-29 17:25:50.340762: I tensorflow/core/platform/profile_utils/cpu_utils.cc:104] CPU Frequency: 2300000000 Hz
+2020-10-29 17:25:50.341116: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x7f49078fce40 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2020-10-29 17:25:50.341179: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+2020-10-29 17:25:50.367182: W tensorflow/stream_executor/platform/default/dso_loader.cc:59] Could not load dynamic library 'libcuda.so.1'; dlerror: libcuda.so.1: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/cuda/lib64:/usr/local/nccl2/lib:/usr/local/cuda/extras/CUPTI/lib64:/usr/local/cuda/lib64:/usr/local/nccl2/lib:/usr/local/cuda/extras/CUPTI/lib64
+2020-10-29 17:25:50.367277: W tensorflow/stream_executor/cuda/cuda_driver.cc:312] failed call to cuInit: UNKNOWN ERROR (303)
+2020-10-29 17:25:50.367348: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:156] kernel driver does not appear to be running on this host (pjm1021): /proc/driver/nvidia/version does not exist
+2020-10-29 17:25:50.367765: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN)to use the following CPU instructions in performance-critical operations:  AVX2 FMA
 To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
-2020-10-29 16:47:20.004163: I tensorflow/core/platform/profile_utils/cpu_utils.cc:104] CPU Frequency: 2300000000 Hz
-2020-10-29 16:47:20.004483: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x7f5a938fced0 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
-2020-10-29 16:47:20.004526: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
-2020-10-29 16:47:20.021178: I tensorflow/core/platform/profile_utils/cpu_utils.cc:104] CPU Frequency: 2300000000 Hz
-2020-10-29 16:47:20.021575: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x7f38678fc430 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
-2020-10-29 16:47:20.021627: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+2020-10-29 17:25:50.383404: I tensorflow/core/platform/profile_utils/cpu_utils.cc:104] CPU Frequency: 2300000000 Hz
+2020-10-29 17:25:50.383765: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x7f2d9b901090 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2020-10-29 17:25:50.383807: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
 INFO:absl:Running publisher for StatisticsGen
 INFO:absl:MetadataStore with DB connection initialized
 INFO:absl:Component StatisticsGen is finished.
@@ -202,31 +201,56 @@ INFO:absl:Running driver for SchemaGen
 INFO:absl:MetadataStore with DB connection initialized
 INFO:absl:Running executor for SchemaGen
 INFO:absl:Attempting to infer TFX Python dependency for beam
-INFO:absl:Copying all content from install dir /opt/conda/envs/tfx_024_iris_sklearn/lib/python3.7/site-packages/tfx to temp dir /tmp/tmpnq6qpdgr/build/tfx
-INFO:absl:Generating a temp setup file at /tmp/tmpnq6qpdgr/build/tfx/setup.py
-INFO:absl:Creating temporary sdist package, logs available at /tmp/tmpnq6qpdgr/build/tfx/setup.log
-INFO:absl:Added --extra_package=/tmp/tmpnq6qpdgr/build/tfx/dist/tfx_ephemeral-0.24.1.tar.gz to beam args
+INFO:absl:Copying all content from install dir /opt/conda/envs/tfx_024_iris_sklearn/lib/python3.7/site-packages/tfx to temp dir /tmp/tmp90p67d0f/build/tfx
+INFO:absl:Generating a temp setup file at /tmp/tmp90p67d0f/build/tfx/setup.py
+INFO:absl:Creating temporary sdist package, logs available at /tmp/tmp90p67d0f/build/tfx/setup.log
+INFO:absl:Added --extra_package=/tmp/tmp90p67d0f/build/tfx/dist/tfx_ephemeral-0.24.1.tar.gz to beam args
 INFO:absl:Processing schema from statistics for split train.
 WARNING:tensorflow:From /opt/conda/envs/tfx_024_iris_sklearn/lib/python3.7/site-packages/tensorflow_data_validation/utils/stats_util.py:229: tf_record_iterator (from tensorflow.python.lib.io.tf_record) is deprecated and will be removed in a future version.
 Instructions for updating:
 Use eager execution and: 
 `tf.data.TFRecordDataset(path)`
 INFO:absl:Processing schema from statistics for split eval.
-INFO:absl:Schema written to /home/pmccarthy/tfx/pipelines/iris_sklearn_local/SchemaGen/schema/53/schema.pbtxt.
+INFO:absl:Schema written to /home/pmccarthy/tfx/pipelines/iris_sklearn_local/SchemaGen/schema/57/schema.pbtxt.
 INFO:absl:Running publisher for SchemaGen
 INFO:absl:MetadataStore with DB connection initialized
 INFO:absl:Component SchemaGen is finished.
+INFO:absl:Component ExampleValidator is running.
+INFO:absl:Running driver for ExampleValidator
+INFO:absl:MetadataStore with DB connection initialized
+INFO:absl:Running executor for ExampleValidator
+INFO:absl:Attempting to infer TFX Python dependency for beam
+INFO:absl:Copying all content from install dir /opt/conda/envs/tfx_024_iris_sklearn/lib/python3.7/site-packages/tfx to temp dir /tmp/tmpetv14_s3/build/tfx
+INFO:absl:Generating a temp setup file at /tmp/tmpetv14_s3/build/tfx/setup.py
+INFO:absl:Creating temporary sdist package, logs available at /tmp/tmpetv14_s3/build/tfx/setup.log
+INFO:absl:Added --extra_package=/tmp/tmpetv14_s3/build/tfx/dist/tfx_ephemeral-0.24.1.tar.gz to beam args
+INFO:absl:Validating schema against the computed statistics for split train.
+INFO:absl:Validation complete for split train. Anomalies written to /home/pmccarthy/tfx/pipelines/iris_sklearn_local/ExampleValidator/anomalies/58/train.
+INFO:absl:Validating schema against the computed statistics for split eval.
+INFO:absl:Validation complete for split eval. Anomalies written to /home/pmccarthy/tfx/pipelines/iris_sklearn_local/ExampleValidator/anomalies/58/eval.
+INFO:absl:Running publisher for ExampleValidator
+INFO:absl:MetadataStore with DB connection initialized
+INFO:absl:Component ExampleValidator is finished.
 INFO:absl:Component Trainer is running.
 INFO:absl:Running driver for Trainer
 INFO:absl:MetadataStore with DB connection initialized
 INFO:absl:Running executor for Trainer
 INFO:absl:Attempting to infer TFX Python dependency for beam
-INFO:absl:Copying all content from install dir /opt/conda/envs/tfx_024_iris_sklearn/lib/python3.7/site-packages/tfx to temp dir /tmp/tmpica0mba4/build/tfx
-INFO:absl:Generating a temp setup file at /tmp/tmpica0mba4/build/tfx/setup.py
-INFO:absl:Creating temporary sdist package, logs available at /tmp/tmpica0mba4/build/tfx/setup.log
-INFO:absl:Added --extra_package=/tmp/tmpica0mba4/build/tfx/dist/tfx_ephemeral-0.24.1.tar.gz to beam args
+INFO:absl:Copying all content from install dir /opt/conda/envs/tfx_024_iris_sklearn/lib/python3.7/site-packages/tfx to temp dir /tmp/tmpvz1m_q0e/build/tfx
+INFO:absl:Generating a temp setup file at /tmp/tmpvz1m_q0e/build/tfx/setup.py
+INFO:absl:Creating temporary sdist package, logs available at /tmp/tmpvz1m_q0e/build/tfx/setup.log
+INFO:absl:Added --extra_package=/tmp/tmpvz1m_q0e/build/tfx/dist/tfx_ephemeral-0.24.1.tar.gz to beam args
 INFO:absl:Train on the 'train' split when train_args.splits is not set.
 INFO:absl:Evaluate on the 'eval' split when eval_args.splits is not set.
+INFO:absl:Training model.
+2020-10-29 17:25:58.703140: W tensorflow/stream_executor/platform/default/dso_loader.cc:59] Could not load dynamic library 'libcuda.so.1'; dlerror: libcuda.so.1: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/cuda/lib64:/usr/local/nccl2/lib:/usr/local/cuda/extras/CUPTI/lib64:/usr/local/cuda/lib64:/usr/local/nccl2/lib:/usr/local/cuda/extras/CUPTI/lib64
+2020-10-29 17:25:58.703194: W tensorflow/stream_executor/cuda/cuda_driver.cc:312] failed call to cuInit: UNKNOWN ERROR (303)
+2020-10-29 17:25:58.703221: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:156] kernel driver does not appear to be running on this host (pjm1021): /proc/driver/nvidia/version does not exist
+2020-10-29 17:25:58.703636: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN)to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2020-10-29 17:25:58.712725: I tensorflow/core/platform/profile_utils/cpu_utils.cc:104] CPU Frequency: 2300000000 Hz
+2020-10-29 17:25:58.713101: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x55b677ed9b90 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2020-10-29 17:25:58.713147: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
 Traceback (most recent call last):
   File "apache_beam/runners/common.py", line 1213, in apache_beam.runners.common.DoFnRunner.process
   File "apache_beam/runners/common.py", line 742, in apache_beam.runners.common.PerWindowInvoker.invoke_process
@@ -239,17 +263,47 @@ Traceback (most recent call last):
     execution_decision.exec_properties)
   File "/opt/conda/envs/tfx_024_iris_sklearn/lib/python3.7/site-packages/tfx/orchestration/launcher/in_process_component_launcher.py", line 67, in _run_executor
     executor.Do(input_dict, output_dict, exec_properties)
-  File "/opt/conda/envs/tfx_024_iris_sklearn/lib/python3.7/site-packages/tfx/components/trainer/executor.py", line 215, in Do
-    run_fn = udf_utils.get_fn(exec_properties, 'run_fn')
-  File "/opt/conda/envs/tfx_024_iris_sklearn/lib/python3.7/site-packages/tfx/components/util/udf_utils.py", line 43, in get_fn
-    exec_properties[_MODULE_FILE_KEY], fn_name)
-  File "/opt/conda/envs/tfx_024_iris_sklearn/lib/python3.7/site-packages/tfx/utils/import_utils.py", line 67, in import_func_from_source
-    loader.exec_module(user_module)
-  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
-  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
-  File "/home/pmccarthy/iris/experimental/iris_utils_sklearn.py", line 30, in <module>
-    from tfx.dsl.io import fileio
-ModuleNotFoundError: No module named 'tfx.dsl.io'
+  File "/opt/conda/envs/tfx_024_iris_sklearn/lib/python3.7/site-packages/tfx/components/trainer/executor.py", line 219, in Do
+    run_fn(fn_args)
+  File "/home/pmccarthy/iris/experimental/iris_utils_sklearn.py", line 138, in run_fn
+    x_train, y_train = _input_fn(fn_args.train_files, tf_transform_output)
+  File "/home/pmccarthy/iris/experimental/iris_utils_sklearn.py", line 103, in _input_fn
+    num_parallel_calls=tf.data.experimental.AUTOTUNE)
+  File "/opt/conda/envs/tfx_024_iris_sklearn/lib/python3.7/site-packages/tensorflow/python/data/ops/dataset_ops.py", line 1702, in map
+    preserve_cardinality=True)
+  File "/opt/conda/envs/tfx_024_iris_sklearn/lib/python3.7/site-packages/tensorflow/python/data/ops/dataset_ops.py", line 4084, in __init__
+    use_legacy_function=use_legacy_function)
+  File "/opt/conda/envs/tfx_024_iris_sklearn/lib/python3.7/site-packages/tensorflow/python/data/ops/dataset_ops.py", line 3371, in __init__
+    self._function = wrapper_fn.get_concrete_function()
+  File "/opt/conda/envs/tfx_024_iris_sklearn/lib/python3.7/site-packages/tensorflow/python/eager/function.py", line 2939, in get_concrete_function
+    *args, **kwargs)
+  File "/opt/conda/envs/tfx_024_iris_sklearn/lib/python3.7/site-packages/tensorflow/python/eager/function.py", line 2906, in _get_concrete_function_garbage_collected
+    graph_function, args, kwargs = self._maybe_define_function(args, kwargs)
+  File "/opt/conda/envs/tfx_024_iris_sklearn/lib/python3.7/site-packages/tensorflow/python/eager/function.py", line 3213, in _maybe_define_function
+    graph_function = self._create_graph_function(args, kwargs)
+  File "/opt/conda/envs/tfx_024_iris_sklearn/lib/python3.7/site-packages/tensorflow/python/eager/function.py", line 3075, in _create_graph_function
+    capture_by_value=self._capture_by_value),
+  File "/opt/conda/envs/tfx_024_iris_sklearn/lib/python3.7/site-packages/tensorflow/python/framework/func_graph.py", line 986, in func_graph_from_py_func
+    func_outputs = python_func(*func_args, **func_kwargs)
+  File "/opt/conda/envs/tfx_024_iris_sklearn/lib/python3.7/site-packages/tensorflow/python/data/ops/dataset_ops.py", line 3364, in wrapper_fn
+    ret = _wrapper_helper(*args)
+  File "/opt/conda/envs/tfx_024_iris_sklearn/lib/python3.7/site-packages/tensorflow/python/data/ops/dataset_ops.py", line 3299, in _wrapper_helper
+    ret = autograph.tf_convert(func, ag_ctx)(*nested_args)
+  File "/opt/conda/envs/tfx_024_iris_sklearn/lib/python3.7/site-packages/tensorflow/python/autograph/impl/api.py", line 258, in wrapper
+    raise e.ag_error_metadata.to_exception(e)
+TypeError: in user code:
+
+    /home/pmccarthy/iris/experimental/iris_utils_sklearn.py:92 _parse_example  *
+        parsed_example = tf.io.parse_single_example(
+    /opt/conda/envs/tfx_024_iris_sklearn/lib/python3.7/site-packages/tensorflow_transform/output_wrapper.py:92 transformed_feature_spec  *
+        self.transformed_metadata.schema).feature_spec
+    /opt/conda/envs/tfx_024_iris_sklearn/lib/python3.7/site-packages/tensorflow_transform/output_wrapper.py:77 transformed_metadata
+        self.TRANSFORMED_METADATA_DIR))
+    /opt/conda/envs/tfx_024_iris_sklearn/lib/python3.7/posixpath.py:80 join
+        a = os.fspath(a)
+
+    TypeError: expected str, bytes or os.PathLike object, not NoneType
+
 
 During handling of the above exception, another exception occurred:
 
@@ -306,17 +360,47 @@ Traceback (most recent call last):
     execution_decision.exec_properties)
   File "/opt/conda/envs/tfx_024_iris_sklearn/lib/python3.7/site-packages/tfx/orchestration/launcher/in_process_component_launcher.py", line 67, in _run_executor
     executor.Do(input_dict, output_dict, exec_properties)
-  File "/opt/conda/envs/tfx_024_iris_sklearn/lib/python3.7/site-packages/tfx/components/trainer/executor.py", line 215, in Do
-    run_fn = udf_utils.get_fn(exec_properties, 'run_fn')
-  File "/opt/conda/envs/tfx_024_iris_sklearn/lib/python3.7/site-packages/tfx/components/util/udf_utils.py", line 43, in get_fn
-    exec_properties[_MODULE_FILE_KEY], fn_name)
-  File "/opt/conda/envs/tfx_024_iris_sklearn/lib/python3.7/site-packages/tfx/utils/import_utils.py", line 67, in import_func_from_source
-    loader.exec_module(user_module)
-  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
-  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
-  File "/home/pmccarthy/iris/experimental/iris_utils_sklearn.py", line 30, in <module>
-    from tfx.dsl.io import fileio
-ModuleNotFoundError: No module named 'tfx.dsl.io' [while running 'Run[Trainer]']
+  File "/opt/conda/envs/tfx_024_iris_sklearn/lib/python3.7/site-packages/tfx/components/trainer/executor.py", line 219, in Do
+    run_fn(fn_args)
+  File "/home/pmccarthy/iris/experimental/iris_utils_sklearn.py", line 138, in run_fn
+    x_train, y_train = _input_fn(fn_args.train_files, tf_transform_output)
+  File "/home/pmccarthy/iris/experimental/iris_utils_sklearn.py", line 103, in _input_fn
+    num_parallel_calls=tf.data.experimental.AUTOTUNE)
+  File "/opt/conda/envs/tfx_024_iris_sklearn/lib/python3.7/site-packages/tensorflow/python/data/ops/dataset_ops.py", line 1702, in map
+    preserve_cardinality=True)
+  File "/opt/conda/envs/tfx_024_iris_sklearn/lib/python3.7/site-packages/tensorflow/python/data/ops/dataset_ops.py", line 4084, in __init__
+    use_legacy_function=use_legacy_function)
+  File "/opt/conda/envs/tfx_024_iris_sklearn/lib/python3.7/site-packages/tensorflow/python/data/ops/dataset_ops.py", line 3371, in __init__
+    self._function = wrapper_fn.get_concrete_function()
+  File "/opt/conda/envs/tfx_024_iris_sklearn/lib/python3.7/site-packages/tensorflow/python/eager/function.py", line 2939, in get_concrete_function
+    *args, **kwargs)
+  File "/opt/conda/envs/tfx_024_iris_sklearn/lib/python3.7/site-packages/tensorflow/python/eager/function.py", line 2906, in _get_concrete_function_garbage_collected
+    graph_function, args, kwargs = self._maybe_define_function(args, kwargs)
+  File "/opt/conda/envs/tfx_024_iris_sklearn/lib/python3.7/site-packages/tensorflow/python/eager/function.py", line 3213, in _maybe_define_function
+    graph_function = self._create_graph_function(args, kwargs)
+  File "/opt/conda/envs/tfx_024_iris_sklearn/lib/python3.7/site-packages/tensorflow/python/eager/function.py", line 3075, in _create_graph_function
+    capture_by_value=self._capture_by_value),
+  File "/opt/conda/envs/tfx_024_iris_sklearn/lib/python3.7/site-packages/tensorflow/python/framework/func_graph.py", line 986, in func_graph_from_py_func
+    func_outputs = python_func(*func_args, **func_kwargs)
+  File "/opt/conda/envs/tfx_024_iris_sklearn/lib/python3.7/site-packages/tensorflow/python/data/ops/dataset_ops.py", line 3364, in wrapper_fn
+    ret = _wrapper_helper(*args)
+  File "/opt/conda/envs/tfx_024_iris_sklearn/lib/python3.7/site-packages/tensorflow/python/data/ops/dataset_ops.py", line 3299, in _wrapper_helper
+    ret = autograph.tf_convert(func, ag_ctx)(*nested_args)
+  File "/opt/conda/envs/tfx_024_iris_sklearn/lib/python3.7/site-packages/tensorflow/python/autograph/impl/api.py", line 258, in wrapper
+    raise e.ag_error_metadata.to_exception(e)
+TypeError: in user code:
+
+    /home/pmccarthy/iris/experimental/iris_utils_sklearn.py:92 _parse_example  *
+        parsed_example = tf.io.parse_single_example(
+    /opt/conda/envs/tfx_024_iris_sklearn/lib/python3.7/site-packages/tensorflow_transform/output_wrapper.py:92 transformed_feature_spec  *
+        self.transformed_metadata.schema).feature_spec
+    /opt/conda/envs/tfx_024_iris_sklearn/lib/python3.7/site-packages/tensorflow_transform/output_wrapper.py:77 transformed_metadata
+        self.TRANSFORMED_METADATA_DIR))
+    /opt/conda/envs/tfx_024_iris_sklearn/lib/python3.7/posixpath.py:80 join
+        a = os.fspath(a)
+
+    TypeError: expected str, bytes or os.PathLike object, not NoneType
+ [while running 'Run[Trainer]']
 + popd
 ~/projects/tfx_questions/20201029-sklearn_iris
 + set +x
