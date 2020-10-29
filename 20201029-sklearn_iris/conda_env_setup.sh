@@ -22,7 +22,8 @@ conda activate tfx_024_iris_sklearn
 conda env export > $STARTDIR/environment.yml
 
 pip install -U pip
-pip install tfx==0.24.1 --use-feature=2020-resolver 
+pip install -i https://pypi-nightly.tensorflow.org/simple tfx
+
 pip install scikit-learn numpy --use-feature=2020-resolver
 
 pip freeze > $STARTDIR/requirements.txt
