@@ -111,9 +111,9 @@ def run_fn(fn_args: TrainerFnArgs):
     train_dataset = _input_fn(fn_args.train_files, tf_transform_output, BATCH_SIZE)
     eval_dataset = _input_fn(fn_args.eval_files, tf_transform_output, BATCH_SIZE)
   
-    mirrored_strategy = tf.distribute.MirroredStrategy()
-    with mirrored_strategy.scope():
-      model = _build_keras()
+    # mirrored_strategy = tf.distribute.MirroredStrategy()
+    # with mirrored_strategy.scope():
+    model = _build_keras()
     log_dir = os.path.join(os.path.dirname(fn_args.serving_model_dir), 'logs')
     tensorboard_callback = tf.keras.callbacks.TensorBoard(
       log_dir=log_dir, update_freq='batch')
