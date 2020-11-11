@@ -1,6 +1,9 @@
 #!/bin/bash
 
 set -x
+
+STARTDIR=$PWD
+
 mkdir -p $HOME/sklearn_iris_test
 pushd $HOME/sklearn_iris_test
 
@@ -16,18 +19,19 @@ source $CONDA_BASE/etc/profile.d/conda.sh
 conda activate tfx_024_iris_sklearn
 
 # Show what's in our environment
-conda env export > environment.yml
+conda env export > $STARTDIR/environment.yml
 
 pip install -U pip
-pip install tfx==0.24.1 --use-feature=2020-resolver 
+pip install -i https://pypi-nightly.tensorflow.org/simple tfx
+
 pip install scikit-learn numpy --use-feature=2020-resolver
 
-pip freeze > requirements.txt
+pip freeze > $STARTDIR/requirements.txt
 
 # Get a fresh copy of TFX, go to a recent tag
 git clone https://github.com/tensorflow/tfx.git tfx-source
 pushd tfx-source
-# git checkout tags/0.24.1
+git checkout master 
 popd
 
 
